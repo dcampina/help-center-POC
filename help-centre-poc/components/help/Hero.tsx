@@ -31,8 +31,8 @@ export function Hero() {
           How can we help you today?
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-base text-white/75 text-pretty">
-          Guides for Distributions, Relations (zimpel) and Voices — from OTS and Presseportal
-          to Native Ads and ARGUS monitoring.
+          Guides for Distributions, Relations (zimpel), Voices, Native Advertising and
+          Presseportal — from OTS distribution to ARGUS monitoring.
         </p>
 
         <form

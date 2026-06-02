@@ -21,6 +21,7 @@ type HeaderSearchProps = {
   inputClassName?: string
   placeholder?: string
   defaultQuery?: string
+  wrapperClassName?: string
 }
 
 export function HeaderSearch({
@@ -28,6 +29,7 @@ export function HeaderSearch({
   inputClassName,
   placeholder = "Search help articles…",
   defaultQuery = "",
+  wrapperClassName,
 }: HeaderSearchProps) {
   const router = useRouter()
   const [query, setQuery] = useState(defaultQuery)
@@ -52,7 +54,12 @@ export function HeaderSearch({
 
   return (
     <>
-      <div className="hidden min-w-0 flex-1 md:block md:max-w-md lg:max-w-lg">
+      <div
+        className={cn(
+          "hidden min-w-0 flex-1 md:block md:max-w-md lg:max-w-lg",
+          wrapperClassName
+        )}
+      >
         {form}
       </div>
       <Sheet>

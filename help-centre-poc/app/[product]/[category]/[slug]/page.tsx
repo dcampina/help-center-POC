@@ -8,11 +8,10 @@ import {
   getCategory,
   getProduct,
 } from "@/content/help"
-import { parseLocale } from "@/lib/locale"
+import { getLocale } from "@/lib/locale"
 
 type ArticlePageProps = {
   params: Promise<{ product: string; category: string; slug: string }>
-  searchParams: Promise<{ locale?: string }>
 }
 
 export function generateStaticParams() {
@@ -29,10 +28,9 @@ export function generateStaticParams() {
   return params
 }
 
-export default async function ArticlePage({ params, searchParams }: ArticlePageProps) {
+export default async function ArticlePage({ params }: ArticlePageProps) {
   const { product, category, slug } = await params
-  const { locale: localeParam } = await searchParams
-  const locale = parseLocale(localeParam)
+  const locale = await getLocale()
 
   if (!getProduct(product) || !getCategory(product, category) || !articleExists(product, category, slug)) {
     notFound()

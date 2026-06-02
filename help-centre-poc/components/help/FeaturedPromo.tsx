@@ -21,8 +21,8 @@ export function FeaturedPromo() {
               Learn PR workflows with news aktuell
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-muted-foreground text-pretty">
-              Video courses and guided paths for OTS distribution, zimpel research and Voices
-              production — free for existing customers.
+              Video courses and guided paths for OTS distribution, zimpel research, Presseportal,
+              Native Advertising and Voices — free for existing customers.
             </p>
           </div>
           <Button

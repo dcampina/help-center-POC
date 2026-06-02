@@ -4,11 +4,11 @@ import Link from "next/link"
 import { format } from "date-fns"
 import { de, enUS } from "date-fns/locale"
 
+import { PresseportalIcon } from "@/components/help/PresseportalIcon"
 import type { Locale } from "@/content/help"
 import { popularSearchChips } from "@/content/help"
 import { groupSearchResults, highlightSnippet, searchArticles } from "@/lib/search"
 import { articleUrl, searchUrl } from "@/lib/urls"
-import { LocaleTabs } from "@/components/help/LocaleTabs"
 import { Separator } from "@/components/ui/separator"
 
 type SearchResultsProps = {
@@ -34,7 +34,7 @@ export function SearchResults({ query, locale }: SearchResultsProps) {
           {popularSearchChips.map((chip) => (
             <Link
               key={chip}
-              href={searchUrl(chip, locale)}
+              href={searchUrl(chip)}
               className="rounded-full border border-border bg-muted/50 px-3 py-1.5 text-sm transition-colors hover:border-brand/30 hover:bg-brand/5 hover:text-brand"
             >
               {chip}
@@ -56,7 +56,7 @@ export function SearchResults({ query, locale }: SearchResultsProps) {
           {popularSearchChips.map((chip) => (
             <Link
               key={chip}
-              href={searchUrl(chip, locale)}
+              href={searchUrl(chip)}
               className="rounded-full border border-border px-3 py-1.5 text-sm hover:text-brand"
             >
               {chip}
@@ -75,7 +75,12 @@ export function SearchResults({ query, locale }: SearchResultsProps) {
       </p>
       {grouped.map((group) => (
         <section key={group.productSlug}>
-          <h2 className="text-lg font-semibold text-brand">{group.productName}</h2>
+          <h2 className="flex items-center gap-2 text-lg font-semibold text-brand">
+            {group.productSlug === "presseportal" ? (
+              <PresseportalIcon size={22} />
+            ) : null}
+            {group.productName}
+          </h2>
           <div className="mt-4 space-y-8">
             {group.categories.map((cat) => (
               <div key={cat.categorySlug}>
@@ -89,8 +94,7 @@ export function SearchResults({ query, locale }: SearchResultsProps) {
                         href={articleUrl(
                           article.productSlug,
                           article.categorySlug,
-                          article.slug,
-                          locale
+                          article.slug
                         )}
                         className="block px-4 py-4 transition-colors hover:bg-muted/40"
                       >
@@ -123,11 +127,10 @@ export function SearchResults({ query, locale }: SearchResultsProps) {
   )
 }
 
-export function SearchPageHeader({ locale }: { locale: Locale }) {
+export function SearchPageHeader() {
   return (
-    <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+    <div className="mb-8">
       <h1 className="text-2xl font-semibold tracking-tight">Search</h1>
-      <LocaleTabs locale={locale} />
     </div>
   )
 }

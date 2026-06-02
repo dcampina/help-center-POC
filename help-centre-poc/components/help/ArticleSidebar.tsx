@@ -1,14 +1,14 @@
 "use client"
 
 import Link from "next/link"
-import { List } from "lucide-react"
+import { ArrowLeft, List } from "lucide-react"
+import { format } from "date-fns"
+import { de, enUS } from "date-fns/locale"
 
-import type { Article, Locale } from "@/content/help"
+import type { Category, Locale } from "@/content/help"
 import type { TocItem } from "@/lib/toc"
 import { articleUrl } from "@/lib/urls"
 import { Toc } from "@/components/help/Toc"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Separator } from "@/components/ui/separator"
 import {
   Sheet,
   SheetContent,
@@ -17,61 +17,91 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
 
+type CategoryLink = {
+  category: Category
+  href: string | null
+}
+
 type ArticleSidebarProps = {
-  siblings: Article[]
-  currentSlug: string
+  productName: string
   categoryName: string
+  currentCategorySlug: string
+  categoryLinks: CategoryLink[]
   tocItems: TocItem[]
+  updatedAt: string
   locale: Locale
 }
 
-function SidebarNav({
-  siblings,
-  currentSlug,
+function SidebarContent({
+  productName,
   categoryName,
+  currentCategorySlug,
+  categoryLinks,
   tocItems,
+  updatedAt,
   locale,
   className,
 }: ArticleSidebarProps & { className?: string }) {
+  const dateLocale = locale === "de" ? de : enUS
+
   return (
-    <aside className={cn("flex flex-col gap-6", className)}>
-      <div>
-        <p className="mb-3 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-          {categoryName}
-        </p>
-        <ScrollArea className="max-h-48">
-          <ul className="space-y-0.5 pr-3 text-sm">
-            {siblings.map((sibling) => {
-              const href = articleUrl(
-                sibling.productSlug,
-                sibling.categorySlug,
-                sibling.slug,
-                locale
-              )
-              const isActive = sibling.slug === currentSlug
-              return (
-                <li key={sibling.slug}>
-                  <Link
-                    href={href}
-                    className={cn(
-                      "block rounded-md px-2 py-1.5 transition-colors",
-                      isActive
-                        ? "bg-brand/10 font-medium text-brand"
-                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                    )}
-                  >
-                    {sibling.title}
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </ScrollArea>
-      </div>
-      <Separator />
-      <Toc items={tocItems} />
+    <aside className={cn("flex flex-col", className)}>
+      <Link
+        href="/"
+        className="mb-5 flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-brand"
+      >
+        <ArrowLeft className="size-3.5" />
+        Back to Help Centre
+      </Link>
+
+      <p className="mb-1.5 text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
+        {productName}
+      </p>
+      <ul className="mb-5 flex flex-col gap-0.5">
+        {categoryLinks.map(({ category, href }) => {
+          const isActive = category.slug === currentCategorySlug
+          const classNames = cn(
+            "block rounded-lg px-2.5 py-1.5 text-[12.5px] leading-snug transition-colors",
+            isActive
+              ? "bg-brand/10 font-medium text-brand"
+              : "text-muted-foreground hover:bg-muted hover:text-foreground"
+          )
+
+          if (!href) {
+            return (
+              <li key={category.slug}>
+                <span className={classNames}>{category.name}</span>
+              </li>
+            )
+          }
+
+          return (
+            <li key={category.slug}>
+              <Link href={href} className={classNames}>
+                {category.name}
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
+
+      {tocItems.length > 0 && (
+        <>
+          <Separator className="mb-4" />
+          <Toc items={tocItems} />
+        </>
+      )}
+
+      <Separator className="my-4" />
+      <p className="text-[11px] leading-relaxed text-muted-foreground">
+        {productName} · {categoryName}
+        <br />
+        Last updated{" "}
+        {format(new Date(updatedAt), "MMMM yyyy", { locale: dateLocale })}
+      </p>
     </aside>
   )
 }
@@ -80,8 +110,8 @@ export function ArticleSidebar(props: ArticleSidebarProps) {
   return (
     <>
       <div className="hidden lg:block">
-        <div className="sticky top-24">
-          <SidebarNav {...props} />
+        <div className="sticky top-14 h-[calc(100svh-3.5rem)] overflow-y-auto border-r border-border py-8 pr-4 pl-6">
+          <SidebarContent {...props} />
         </div>
       </div>
 
@@ -102,7 +132,7 @@ export function ArticleSidebar(props: ArticleSidebarProps) {
               <SheetTitle>Contents</SheetTitle>
             </SheetHeader>
             <div className="overflow-y-auto px-4 pb-6">
-              <SidebarNav {...props} />
+              <SidebarContent {...props} />
             </div>
           </SheetContent>
         </Sheet>
@@ -110,3 +140,5 @@ export function ArticleSidebar(props: ArticleSidebarProps) {
     </>
   )
 }
+
+export type { CategoryLink }

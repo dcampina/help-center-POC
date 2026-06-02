@@ -1,19 +1,14 @@
-import type { Locale } from "@/content/help"
-
 export function articleUrl(
   productSlug: string,
   categorySlug: string,
-  articleSlug: string,
-  locale?: Locale
+  articleSlug: string
 ): string {
-  const base = `/${productSlug}/${categorySlug}/${articleSlug}`
-  return locale === "en" ? `${base}?locale=en` : base
+  return `/${productSlug}/${categorySlug}/${articleSlug}`
 }
 
-export function searchUrl(query: string, locale?: Locale): string {
+export function searchUrl(query: string): string {
   const params = new URLSearchParams()
   if (query.trim()) params.set("q", query.trim())
-  if (locale && locale !== "de") params.set("locale", locale)
   const qs = params.toString()
   return qs ? `/search?${qs}` : "/search"
 }

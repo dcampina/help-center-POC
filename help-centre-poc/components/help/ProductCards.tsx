@@ -1,6 +1,7 @@
 import Link from "next/link"
-import { Mic, Send, Users, ArrowRight } from "lucide-react"
+import { Megaphone, Newspaper, Send, Users, Video, ArrowRight } from "lucide-react"
 
+import { BrandIcon } from "@/components/help/BrandIcon"
 import { products } from "@/content/help"
 import { searchUrl } from "@/lib/urls"
 import {
@@ -15,7 +16,10 @@ import { Button } from "@/components/ui/button"
 const iconMap = {
   send: Send,
   users: Users,
-  mic: Mic,
+  video: Video,
+  megaphone: Megaphone,
+  newspaper: Newspaper,
+  presseportal: Newspaper,
 } as const
 
 export function ProductCards() {
@@ -24,12 +28,13 @@ export function ProductCards() {
       <div className="mb-8">
         <h2 className="text-2xl font-semibold tracking-tight">Browse by product</h2>
         <p className="mt-2 text-muted-foreground">
-          Distributions, Relations and Voices — pick a product to find guides.
+          Distributions, Relations, Voices, Native Advertising and Presseportal — pick a product to find guides.
         </p>
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => {
           const Icon = iconMap[product.iconKey]
+          const useBrandIcon = product.iconKey === "presseportal"
           return (
             <Card
               key={product.slug}
@@ -37,10 +42,20 @@ export function ProductCards() {
             >
               <CardHeader>
                 <div
-                  className="mb-2 flex size-10 items-center justify-center rounded-lg text-white"
-                  style={{ backgroundColor: product.accentColor }}
+                  className={
+                    useBrandIcon
+                      ? "mb-2 flex size-10 items-center justify-center"
+                      : "mb-2 flex size-10 items-center justify-center rounded-lg text-white"
+                  }
+                  style={
+                    useBrandIcon ? undefined : { backgroundColor: product.accentColor }
+                  }
                 >
-                  <Icon className="size-5" />
+                  <BrandIcon
+                    iconKey={product.iconKey}
+                    lucideIcon={Icon}
+                    size={useBrandIcon ? 40 : 20}
+                  />
                 </div>
                 <CardTitle>{product.name}</CardTitle>
                 <CardDescription className="text-pretty">{product.description}</CardDescription>
