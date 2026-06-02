@@ -43,5 +43,5 @@ export function isHighlightAddonTitle(title: string): boolean {
 }
 
 export function isPresseportalCard(card: { title: string; description: string }): boolean {
-  return /presseportal/i.test(card.title) || /presseportal/i.test(card.description)
+  return /presseportal/i.test(card.title)
 }

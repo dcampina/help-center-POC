@@ -110,7 +110,7 @@ export function ArticleSidebar(props: ArticleSidebarProps) {
   return (
     <>
       <div className="hidden lg:block">
-        <div className="sticky top-14 h-[calc(100svh-3.5rem)] overflow-y-auto border-r border-border py-8 pr-4 pl-6">
+        <div className="scrollbar-subtle sticky top-14 h-[calc(100svh-3.5rem)] overflow-y-auto border-r border-border py-8 pr-4 pl-6">
           <SidebarContent {...props} />
         </div>
       </div>
@@ -131,7 +131,7 @@ export function ArticleSidebar(props: ArticleSidebarProps) {
             <SheetHeader>
               <SheetTitle>Contents</SheetTitle>
             </SheetHeader>
-            <div className="overflow-y-auto px-4 pb-6">
+            <div className="scrollbar-subtle overflow-y-auto px-4 pb-6">
               <SidebarContent {...props} />
             </div>
           </SheetContent>

@@ -1,12 +1,10 @@
+import { AccentIcon, getCardIcon } from "@/components/help/article/AccentIcon"
 import {
   isPresseportalCard,
   PresseportalIcon,
 } from "@/components/help/PresseportalIcon"
 import type { ArticleCard } from "@/lib/article-blocks"
 import { cn } from "@/lib/utils"
-
-const iconAccent =
-  "bg-brand/10 text-brand ring-brand/20"
 
 const includedPill = "bg-brand/10 text-brand"
 const addonPill = "bg-muted text-muted-foreground"
@@ -32,15 +30,7 @@ export function ArticleCardGrid({ cards }: ArticleCardGridProps) {
               {showPresseportalIcon ? (
                 <PresseportalIcon className="shrink-0" size={36} />
               ) : (
-                <span
-                  className={cn(
-                    "inline-flex size-9 shrink-0 items-center justify-center rounded-lg ring-1 ring-inset",
-                    iconAccent
-                  )}
-                  aria-hidden
-                >
-                  <span className="size-3 rounded-[4px] border-2 border-current" />
-                </span>
+                <AccentIcon icon={getCardIcon(card.title, card.badgeVariant)} />
               )}
               <div className="min-w-0 pt-0.5">
                 <p className="text-sm font-semibold text-foreground">{card.title}</p>

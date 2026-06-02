@@ -131,6 +131,49 @@
   );
 }
 
+@utility scrollbar-subtle {
+  --scrollbar-thumb: color-mix(in oklch, var(--muted-foreground) 28%, transparent);
+  --scrollbar-thumb-hover: color-mix(
+    in oklch,
+    var(--muted-foreground) 45%,
+    transparent
+  );
+  --scrollbar-thumb-length: 2rem;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin-block: 6rem;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    background-image: linear-gradient(
+      to bottom,
+      var(--scrollbar-thumb),
+      var(--scrollbar-thumb)
+    );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% var(--scrollbar-thumb-length);
+    border-radius: 9999px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(
+      to bottom,
+      var(--scrollbar-thumb-hover),
+      var(--scrollbar-thumb-hover)
+    );
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

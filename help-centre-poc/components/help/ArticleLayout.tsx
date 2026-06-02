@@ -9,9 +9,13 @@ import {
   getRelatedArticles,
 } from "@/content/help"
 import { extractToc } from "@/lib/toc"
+import { estimateReadingTimeMinutes } from "@/lib/reading-time"
 import { articleUrl } from "@/lib/urls"
 import { HelpHeader } from "@/components/help/HelpHeader"
-import { PresseportalIcon } from "@/components/help/PresseportalIcon"
+import {
+  ARTICLE_CONTENT_ID,
+  ArticlePageHeader,
+} from "@/components/help/ArticlePageHeader"
 import { ArticleSidebar } from "@/components/help/ArticleSidebar"
 import { Markdown } from "@/components/help/Markdown"
 import { RelatedArticles } from "@/components/help/RelatedArticles"
@@ -26,6 +30,11 @@ export function ArticleLayout({ article, locale }: ArticleLayoutProps) {
   const category = getCategory(article.productSlug, article.categorySlug)!
   const tocItems = extractToc(article.body)
   const related = getRelatedArticles(article)
+  const readingTimeMin = estimateReadingTimeMinutes(
+    article.title,
+    article.lead,
+    article.body
+  )
 
   const categoryLinks = getCategoriesForProduct(article.productSlug).map(
     (cat) => {
@@ -77,25 +86,19 @@ export function ArticleLayout({ article, locale }: ArticleLayoutProps) {
             <span>{category.name}</span>
           </nav>
 
-          <header className="mb-8">
-            <p className="mb-2.5 flex items-center gap-1.5 text-[11px] font-bold tracking-widest text-brand uppercase">
-              {product.slug === "presseportal" ? (
-                <PresseportalIcon size={16} />
-              ) : (
-                <span className="size-1.5 rounded-full bg-brand" aria-hidden />
-              )}
-              {product.name}
-            </p>
-            <h1 className="font-serif text-[1.875rem] leading-tight font-normal tracking-normal text-balance text-foreground">
-              {article.title}
-            </h1>
-            <p className="mt-3 max-w-[580px] border-b border-border pb-6 text-[15px] leading-relaxed text-muted-foreground text-pretty">
-              {article.lead}
-            </p>
-          </header>
+          <ArticlePageHeader
+            productName={product.name}
+            productSlug={product.slug}
+            title={article.title}
+            lead={article.lead}
+            readingTimeMin={readingTimeMin}
+            locale={locale}
+          />
 
-          <Markdown content={article.body} />
-          <RelatedArticles articles={related} />
+          <div id={ARTICLE_CONTENT_ID}>
+            <Markdown content={article.body} />
+            <RelatedArticles articles={related} />
+          </div>
         </article>
       </div>
     </div>

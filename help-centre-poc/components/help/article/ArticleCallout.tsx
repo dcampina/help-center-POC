@@ -1,3 +1,4 @@
+import { AccentIcon, getCalloutIcon } from "@/components/help/article/AccentIcon"
 import {
   isHighlightAddonTitle,
   PresseportalIcon,
@@ -6,17 +7,12 @@ import { cn } from "@/lib/utils"
 
 type CalloutVariant = "accent" | "muted"
 
-const variantStyles: Record<
-  CalloutVariant,
-  { box: string; icon: string }
-> = {
+const variantStyles: Record<CalloutVariant, { box: string }> = {
   accent: {
     box: "border-brand/15 bg-brand/5",
-    icon: "bg-brand/10 text-brand ring-brand/20",
   },
   muted: {
     box: "border-border bg-muted/60",
-    icon: "bg-brand/10 text-brand ring-brand/20",
   },
 }
 
@@ -41,15 +37,11 @@ export function ArticleCallout({ variant, title, body }: ArticleCalloutProps) {
         {showPresseportalIcon ? (
           <PresseportalIcon className="mt-0.5 shrink-0" size={28} />
         ) : (
-          <span
-            className={cn(
-              "mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-md ring-1 ring-inset",
-              styles.icon
-            )}
-            aria-hidden
-          >
-            <span className="size-2.5 rounded-[3px] border-2 border-current" />
-          </span>
+          <AccentIcon
+            icon={getCalloutIcon(title, variant)}
+            size="sm"
+            className="mt-0.5"
+          />
         )}
         <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-foreground">{title}</p>
