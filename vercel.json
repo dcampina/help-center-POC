@@ -1,5 +1,10 @@
 {
-  "installCommand": "npm install --prefix help-centre-poc",
-  "buildCommand": "npm run build --prefix help-centre-poc",
-  "devCommand": "npm run dev --prefix help-centre-poc"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "builds": [
+    {
+      "src": "help-centre-poc/package.json",
+      "use": "@vercel/next"
+    }
+  ]
 }
