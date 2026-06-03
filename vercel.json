@@ -1,0 +1,5 @@
+{
+  "installCommand": "npm install --prefix help-centre-poc",
+  "buildCommand": "npm run build --prefix help-centre-poc",
+  "devCommand": "npm run dev --prefix help-centre-poc"
+}

@@ -7,7 +7,6 @@ import { de, enUS } from "date-fns/locale"
 
 import type { Category, Locale } from "@/content/help"
 import type { TocItem } from "@/lib/toc"
-import { articleUrl } from "@/lib/urls"
 import { Toc } from "@/components/help/Toc"
 import {
   Sheet,

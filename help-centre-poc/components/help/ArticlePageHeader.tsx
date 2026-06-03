@@ -63,10 +63,11 @@ export function ArticlePageHeader({
   }, [])
 
   useEffect(() => {
-    updateProgress()
+    const frame = requestAnimationFrame(() => updateProgress())
     window.addEventListener("scroll", updateProgress, { passive: true })
     window.addEventListener("resize", updateProgress, { passive: true })
     return () => {
+      cancelAnimationFrame(frame)
       window.removeEventListener("scroll", updateProgress)
       window.removeEventListener("resize", updateProgress)
     }

@@ -49,7 +49,7 @@ function buildSnippet(article: Article, terms: string[]): string {
   const idx = lower.indexOf(term.toLowerCase())
   const start = Math.max(0, idx - 60)
   const end = Math.min(source.length, idx + term.length + 100)
-  let snippet = (start > 0 ? "…" : "") + source.slice(start, end) + (end < source.length ? "…" : "")
+  const snippet = (start > 0 ? "…" : "") + source.slice(start, end) + (end < source.length ? "…" : "")
   return snippet
 }
 
