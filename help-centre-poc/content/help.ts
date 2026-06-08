@@ -1299,6 +1299,7 @@ export function getFeaturedArticles(locale: Locale = "de"): Article[] {
     "distribution-channels-explained",
     "presseportal-overview",
     "native-advertising-overview",
+    "regio-ads",
     "argus-monitoring",
     "getting-started-with-voices",
   ]

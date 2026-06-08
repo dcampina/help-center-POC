@@ -20,13 +20,17 @@ type ArticlePreviewCardProps = {
   article: Article
   locale: Locale
   featured?: boolean
+  showLead?: boolean
 }
 
 export function ArticlePreviewCard({
   article,
   locale,
   featured = false,
+  showLead = false,
 }: ArticlePreviewCardProps) {
+  const displayLead = featured || showLead
+  const expanded = featured || showLead
   const product = getProduct(article.productSlug)
   const category = getCategory(article.productSlug, article.categorySlug)
   const dateLocale = locale === "de" ? de : enUS
@@ -34,12 +38,12 @@ export function ArticlePreviewCard({
   return (
     <Card
       className={
-        featured
+        expanded
           ? "flex h-full flex-col border-border/80 bg-card transition-shadow hover:shadow-md"
           : "border-border/60 transition-colors hover:border-brand/25 hover:bg-muted/30"
       }
     >
-      <CardHeader className={featured ? "pb-2" : "gap-1 p-4 pb-1"}>
+      <CardHeader className={expanded ? "pb-2" : "gap-1 p-4 pb-1"}>
         <div className="flex flex-wrap items-center gap-2">
           {product ? (
             <Badge
@@ -56,7 +60,7 @@ export function ArticlePreviewCard({
             <span className="text-[11px] text-muted-foreground">{category.name}</span>
           ) : null}
         </div>
-        <CardTitle className={featured ? "text-base leading-snug" : "text-sm leading-snug"}>
+        <CardTitle className={expanded ? "text-base leading-snug" : "text-sm leading-snug"}>
           <Link
             href={articleUrl(article.productSlug, article.categorySlug, article.slug)}
             className="hover:text-brand"
@@ -64,13 +68,13 @@ export function ArticlePreviewCard({
             {article.title}
           </Link>
         </CardTitle>
-        {featured ? (
+        {displayLead ? (
           <CardDescription className="line-clamp-2 text-pretty">{article.lead}</CardDescription>
         ) : null}
       </CardHeader>
       <CardContent
         className={
-          featured ? "mt-auto flex items-center justify-between pt-0" : "flex items-center justify-between p-4 pt-2"
+          expanded ? "mt-auto flex items-center justify-between pt-0" : "flex items-center justify-between p-4 pt-2"
         }
       >
         <time

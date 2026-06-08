@@ -30,13 +30,13 @@ function SectionHeader({
   viewAllLabel?: string
 }) {
   return (
-    <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <div className="mb-2 flex items-center gap-2 text-brand">
-          <Icon className="size-4" />
-          <span className="text-xs font-medium tracking-wide uppercase">{title}</span>
-        </div>
-        <p className="text-sm text-muted-foreground text-pretty">{description}</p>
+        <h2 className="flex items-center gap-2.5 text-2xl font-semibold tracking-tight">
+          <Icon className="size-5 shrink-0 text-brand" />
+          {title}
+        </h2>
+        <p className="mt-2 text-muted-foreground text-pretty">{description}</p>
       </div>
       {viewAllHref && viewAllLabel ? (
         <Button
@@ -81,7 +81,7 @@ export function HomeArticleSections({ locale }: HomeArticleSectionsProps) {
 
   return (
     <>
-      <section className="border-t border-border/60 bg-muted/20">
+      <section className="border-t border-brand/15 bg-gradient-to-b from-brand/10 via-brand/[0.06] to-brand/[0.02]">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
           <SectionHeader
             icon={Star}
@@ -103,36 +103,40 @@ export function HomeArticleSections({ locale }: HomeArticleSectionsProps) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-2">
-          <div>
-            <SectionHeader
-              icon={Clock}
-              title={copy.latestTitle}
-              description={copy.latestDesc}
-            />
-            <ul className="flex flex-col gap-3">
-              {latest.map((article) => (
-                <li key={article.slug}>
-                  <ArticlePreviewCard article={article} locale={locale} />
-                </li>
-              ))}
-            </ul>
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+          <SectionHeader
+            icon={Clock}
+            title={copy.latestTitle}
+            description={copy.latestDesc}
+          />
+          <div className="grid gap-4 sm:grid-cols-2">
+            {latest.map((article) => (
+              <ArticlePreviewCard
+                key={article.slug}
+                article={article}
+                locale={locale}
+                showLead
+              />
+            ))}
           </div>
-          <div>
-            <SectionHeader
-              icon={Flame}
-              title={copy.popularTitle}
-              description={copy.popularDesc}
-            />
-            <ul className="flex flex-col gap-3">
-              {popular.map((article) => (
-                <li key={article.slug}>
-                  <ArticlePreviewCard article={article} locale={locale} />
-                </li>
-              ))}
-            </ul>
-          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border/60 bg-muted/20">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+          <SectionHeader
+            icon={Flame}
+            title={copy.popularTitle}
+            description={copy.popularDesc}
+          />
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {popular.map((article) => (
+              <li key={article.slug}>
+                <ArticlePreviewCard article={article} locale={locale} />
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>
