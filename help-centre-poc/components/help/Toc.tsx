@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useState, type MouseEvent } from "react"
 import { ChevronRight } from "lucide-react"
 
 import {
@@ -8,6 +8,10 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
+import {
+  getArticleScrollOffset,
+  scrollToArticleSection,
+} from "@/lib/article-scroll"
 import type { TocItem } from "@/lib/toc"
 import { cn } from "@/lib/utils"
 
@@ -62,10 +66,11 @@ export function Toc({ items, className }: TocProps) {
     if (items.length === 0) return
 
     const onScroll = () => {
+      const offset = getArticleScrollOffset()
       let current = items[0]?.id ?? null
       for (const item of items) {
         const el = document.getElementById(item.id)
-        if (el && el.getBoundingClientRect().top < 130) {
+        if (el && el.getBoundingClientRect().top < offset) {
           current = item.id
         }
       }
@@ -95,6 +100,14 @@ export function Toc({ items, className }: TocProps) {
 
   if (items.length === 0) return null
 
+  const handleSectionClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
+    event.preventDefault()
+    scrollToArticleSection(id)
+  }
+
   const toggleSection = (sectionId: string, open: boolean) => {
     setCollapsedSections((prev) => {
       const next = new Set(prev)
@@ -121,6 +134,9 @@ export function Toc({ items, className }: TocProps) {
               <li key={section.heading.id}>
                 <a
                   href={`#${section.heading.id}`}
+                  onClick={(event) =>
+                    handleSectionClick(event, section.heading.id)
+                  }
                   className={linkClassName(isSectionActive)}
                 >
                   {section.heading.text}
@@ -139,6 +155,9 @@ export function Toc({ items, className }: TocProps) {
                 <div className="flex items-center gap-0.5">
                   <a
                     href={`#${section.heading.id}`}
+                    onClick={(event) =>
+                      handleSectionClick(event, section.heading.id)
+                    }
                     className={cn(
                       linkClassName(isSectionActive || hasActiveChild),
                       "min-w-0 flex-1"
@@ -171,6 +190,7 @@ export function Toc({ items, className }: TocProps) {
                       <li key={child.id}>
                         <a
                           href={`#${child.id}`}
+                          onClick={(event) => handleSectionClick(event, child.id)}
                           className={linkClassName(activeId === child.id, true)}
                         >
                           {child.text}

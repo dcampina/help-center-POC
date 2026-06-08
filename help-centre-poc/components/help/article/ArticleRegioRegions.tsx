@@ -48,11 +48,7 @@ export function ArticleRegioRegions({ locale }: ArticleRegioRegionsProps) {
   return (
     <div className="my-6 space-y-8">
       {regions.map((region) => (
-        <section
-          key={region.id}
-          id={getRegioRegionTocId(region.id)}
-          className="scroll-mt-20"
-        >
+        <section key={region.id} id={getRegioRegionTocId(region.id)}>
           <div className="flex flex-wrap items-center gap-2.5">
             <h3 className="text-sm font-semibold text-foreground">
               {region.name}

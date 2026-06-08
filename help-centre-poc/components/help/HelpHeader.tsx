@@ -2,12 +2,16 @@ import Link from "next/link"
 import { Bell } from "lucide-react"
 
 import { HeaderSearch } from "@/components/help/HeaderSearch"
+import { HELP_SITE_HEADER_ID } from "@/lib/article-scroll"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 
 export function HelpHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header
+      id={HELP_SITE_HEADER_ID}
+      className="sticky top-0 z-50 border-b border-border/80 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80"
+    >
       <div className="flex h-14 w-full items-center gap-3 px-12 sm:gap-4">
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <span

@@ -104,7 +104,7 @@ export function Markdown({ content, className, locale = "en" }: MarkdownProps) {
             return (
               <h2
                 id={id}
-                className="group mt-10 mb-3 flex scroll-mt-20 items-center gap-2 text-[1.375rem] font-normal tracking-normal text-foreground first:mt-0"
+                className="group mt-10 mb-3 flex items-center gap-2 text-[1.375rem] font-normal tracking-normal text-foreground first:mt-0"
               >
                 {isPresseportal ? <PresseportalIcon size={24} /> : null}
                 {children}
@@ -127,8 +127,8 @@ export function Markdown({ content, className, locale = "en" }: MarkdownProps) {
                 id={id}
                 className={
                   isHighlight
-                    ? "mt-6 mb-2 flex scroll-mt-20 items-center gap-2 text-sm font-semibold text-foreground"
-                    : "mt-6 mb-2 scroll-mt-20 text-sm font-semibold text-foreground"
+                    ? "mt-6 mb-2 flex items-center gap-2 text-sm font-semibold text-foreground"
+                    : "mt-6 mb-2 text-sm font-semibold text-foreground"
                 }
               >
                 {isHighlight ? <PresseportalIcon size={20} /> : null}

@@ -7,8 +7,15 @@ import type { Locale } from "@/content/help"
 import { PresseportalIcon } from "@/components/help/PresseportalIcon"
 import { cn } from "@/lib/utils"
 
+import {
+  applyArticleScrollOffset,
+  ARTICLE_PAGE_HEADER_ID,
+  clearArticleScrollOffset,
+  getArticleHeaderHeight,
+  SITE_HEADER_PX,
+} from "@/lib/article-scroll"
+
 export const ARTICLE_CONTENT_ID = "article-reading-content"
-const SITE_HEADER_PX = 56 // matches HelpHeader h-14
 const STICKY_TOP = "3.5rem"
 
 type ArticlePageHeaderProps = {
@@ -42,9 +49,8 @@ export function ArticlePageHeader({
     const content = document.getElementById(ARTICLE_CONTENT_ID)
     if (!content) return
 
-    const header = content.previousElementSibling
-    const headerHeight =
-      header instanceof HTMLElement ? header.offsetHeight : 0
+    applyArticleScrollOffset()
+    const headerHeight = getArticleHeaderHeight()
     const contentTop =
       window.scrollY + content.getBoundingClientRect().top
     const contentHeight = content.offsetHeight
@@ -70,6 +76,7 @@ export function ArticlePageHeader({
       cancelAnimationFrame(frame)
       window.removeEventListener("scroll", updateProgress)
       window.removeEventListener("resize", updateProgress)
+      clearArticleScrollOffset()
     }
   }, [updateProgress])
 
@@ -77,6 +84,7 @@ export function ArticlePageHeader({
 
   return (
     <header
+      id={ARTICLE_PAGE_HEADER_ID}
       className={cn(
         "sticky z-40 -mx-5 mb-8 border-b border-transparent bg-background/95 px-5 backdrop-blur supports-[backdrop-filter]:bg-background/90",
         "sm:-mx-12 sm:px-12"
