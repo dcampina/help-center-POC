@@ -1,16 +1,22 @@
 import type { LucideIcon } from "lucide-react"
 import {
   BadgeCheck,
+  BarChart3,
   Briefcase,
   CalendarClock,
   CircleAlert,
   Clock,
+  Euro,
+  Film,
   Globe,
   Globe2,
   Info,
   Lightbulb,
   MapPin,
+  MousePointerClick,
+  Newspaper,
   Plus,
+  Search,
   Sparkles,
 } from "lucide-react"
 
@@ -56,4 +62,16 @@ export function getCardIcon(title: string, badgeVariant: "included" | "addon"): 
   if (/fachmedien|specialist|trade/.test(t)) return Briefcase
   if (/regional/.test(t)) return MapPin
   return badgeVariant === "included" ? BadgeCheck : Plus
+}
+
+export function getFeatureIcon(title: string): LucideIcon {
+  const t = title.toLowerCase()
+  if (/platzierung|placement/.test(t)) return BadgeCheck
+  if (/reporting|analytics/.test(t)) return BarChart3
+  if (/multimedia|format/.test(t)) return Film
+  if (/redaktion|editorial/.test(t)) return Newspaper
+  if (/archiv|archive/.test(t)) return Search
+  if (/preis|price|festpreis|budget/.test(t)) return Euro
+  if (/buchung|booking/.test(t)) return MousePointerClick
+  return Info
 }

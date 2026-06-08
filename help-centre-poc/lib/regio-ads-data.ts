@@ -18,7 +18,6 @@ export type RegioRegion = {
   name: string
   coverage: string
   status: "available" | "coming-soon"
-  partnersSubtitle?: string
   partners?: RegioPartner[]
   comingSoonNote?: string
 }
@@ -43,8 +42,6 @@ const content: Record<Locale, RegioRegionsContent> = {
         name: "South",
         coverage: "Baden-Württemberg, Bavaria, parts of Hesse",
         status: "available",
-        partnersSubtitle:
-          "Our partners in Region South are Haas Media Group and Augsburger Media Group (Mediengruppe Pressedruck).",
         partners: [
           {
             name: "Haas Media Group",
@@ -154,8 +151,6 @@ const content: Record<Locale, RegioRegionsContent> = {
         name: "Süd",
         coverage: "Baden-Württemberg, Bayern, Teile Hessens",
         status: "available",
-        partnersSubtitle:
-          "Unsere Partner in Region Süd sind die Haas Mediengruppe und die Augsburger Mediengruppe (Mediengruppe Pressedruck).",
         partners: [
           {
             name: "Haas Mediengruppe",

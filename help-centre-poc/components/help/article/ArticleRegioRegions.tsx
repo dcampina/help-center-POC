@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { MapPin } from "lucide-react"
 
 import {
   Accordion,
@@ -58,7 +59,8 @@ export function ArticleRegioRegions({ locale }: ArticleRegioRegionsProps) {
             />
           </div>
 
-          <p className="mt-1.5 text-sm leading-relaxed text-foreground/70">
+          <p className="mt-1.5 flex items-center gap-1.5 text-sm leading-relaxed text-foreground/70">
+            <MapPin className="size-3.5 shrink-0 text-brand" aria-hidden />
             {region.coverage}
           </p>
 
@@ -68,12 +70,6 @@ export function ArticleRegioRegions({ locale }: ArticleRegioRegionsProps) {
             </p>
           ) : (
             <>
-              {region.partnersSubtitle ? (
-                <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-                  {region.partnersSubtitle}
-                </p>
-              ) : null}
-
               <div className="mt-5 space-y-5">
                 {region.partners?.map((partner) => (
                   <div

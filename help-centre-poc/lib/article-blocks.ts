@@ -9,6 +9,11 @@ export type ArticleStep = {
   text: string
 }
 
+export type FeatureCard = {
+  title: string
+  description: string
+}
+
 export function parseCardGrid(source: string): ArticleCard[] {
   return source
     .trim()
@@ -41,6 +46,18 @@ export function parseCallout(source: string): { title: string; body: string } {
     }
   }
   return { title: first, body: lines.slice(1).join("\n").trim() }
+}
+
+export function parseFeatureCards(source: string): FeatureCard[] {
+  return source
+    .trim()
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => {
+      const [title = "", description = ""] = line.split("|").map((s) => s.trim())
+      return { title, description }
+    })
 }
 
 export function parseSteps(source: string): ArticleStep[] {

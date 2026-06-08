@@ -463,15 +463,15 @@ Alle platzierten Inhalte werden langfristig in Suchmaschinen indexiert und archi
 
 ## Was Sie erhalten
 
-| Feature | Detail |
-|---------|--------|
-| Garantierte Platzierungen | Mindestens 10 verifizierte Platzierungen pro gebuchter Region |
-| Transparentes Reporting | Alle Platzierungen in Ihrem Analytics-Dashboard |
-| Unterstützte Content-Formate | Text, Bild, Video, Audio |
-| Redaktionelles Umfeld | Platzierungen auf etablierten regionalen Nachrichtenportalen |
-| Langfristige Archivierung | Ihr Content wird indexiert und in Suchmaschinen bewahrt |
-| Festpreis | Keine Auktionsmechanik, keine versteckten Kosten, volle Budgetplanbarkeit |
-| Einfache Buchung | Direkt zu jeder ots-Buchung in der App hinzufügbar |
+\`\`\`feature-cards
+Garantierte Platzierungen|Mindestens 10 verifizierte Platzierungen pro gebuchter Region
+Reporting|Alle Platzierungen in Ihrem Analytics-Dashboard
+Multimedia|Text, Bild, Video, Audio
+Redaktionelles Umfeld|Platzierungen auf etablierten regionalen Nachrichtenportalen
+Langfristige Archivierung|Ihr Content wird indexiert und in Suchmaschinen bewahrt
+Festpreis|Keine Auktionsmechanik, keine versteckten Kosten, volle Budgetplanbarkeit
+Einfache Buchung|Direkt zu jeder ots-Buchung in der App hinzufügbar
+\`\`\`
 
 ## Regionen & Partner
 
@@ -858,15 +858,15 @@ All placed content is indexed and archived long-term in search engines.
 
 ## What you get
 
-| Feature | Detail |
-|---------|--------|
-| Guaranteed placements | Minimum 10 verified placements per booked region |
-| Transparent reporting | All placements listed in your Analytics dashboard |
-| Supported content formats | Text, image, video, audio |
-| Editorial environment | Placements within established regional news portals |
-| Long-term archiving | Your content is indexed and preserved in search engines |
-| Fixed price | No auction mechanics, no hidden costs, full budget predictability |
-| Simple booking | Add directly to any ots booking in the app |
+\`\`\`feature-cards
+Guaranteed placements|Minimum 10 verified placements per booked region
+Reporting|All placements listed in your Analytics dashboard
+Multimedia|Text, image, video, audio
+Editorial environment|Placements within established regional news portals
+Long-term archiving|Your content is indexed and preserved in search engines
+Fixed price|No auction mechanics, no hidden costs, full budget predictability
+Simple booking|Add directly to any ots booking in the app
+\`\`\`
 
 ## Regions & partners
 
