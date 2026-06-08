@@ -94,13 +94,13 @@ export function Markdown({ content, className, locale = "en" }: MarkdownProps) {
             return (
               <h2
                 id={id}
-                className="group mt-10 mb-3 flex scroll-mt-20 items-center gap-2 font-serif text-[1.375rem] font-normal tracking-normal text-foreground first:mt-0"
+                className="group mt-10 mb-3 flex scroll-mt-20 items-center gap-2 text-[1.375rem] font-normal tracking-normal text-foreground first:mt-0"
               >
                 {isPresseportal ? <PresseportalIcon size={24} /> : null}
                 {children}
                 <a
                   href={`#${id}`}
-                  className="font-sans text-sm text-brand opacity-0 transition-opacity group-hover:opacity-100"
+                  className="text-sm text-brand opacity-0 transition-opacity group-hover:opacity-100"
                   aria-label={`Link to ${text}`}
                 >
                   #

@@ -92,7 +92,7 @@ export function ArticlePageHeader({
         {productName}
       </p>
 
-      <h1 className="font-serif text-[1.875rem] leading-tight font-normal tracking-normal text-balance text-foreground">
+      <h1 className="text-[1.875rem] leading-tight font-normal tracking-normal text-balance text-foreground">
         {title}
       </h1>
 

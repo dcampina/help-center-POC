@@ -1,16 +1,10 @@
-import { DM_Serif_Display, Geist_Mono, Inter } from "next/font/google"
+import { Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
-
-const dmSerif = DM_Serif_Display({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-serif",
-})
 
 export const metadata = {
   title: "news aktuell Help Centre",
@@ -36,8 +30,7 @@ export default function RootLayout({
         "scroll-smooth antialiased",
         fontMono.variable,
         "font-sans",
-        inter.variable,
-        dmSerif.variable
+        inter.variable
       )}
     >
       <body>
