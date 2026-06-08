@@ -96,7 +96,7 @@ export function ArticleLayout({ article, locale }: ArticleLayoutProps) {
           />
 
           <div id={ARTICLE_CONTENT_ID}>
-            <Markdown content={article.body} />
+            <Markdown content={article.body} locale={locale} />
             <RelatedArticles articles={related} />
           </div>
         </article>

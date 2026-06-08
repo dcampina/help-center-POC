@@ -442,6 +442,102 @@ Veröffentlichen Sie klassische Pressemitteilungen sowie Inhalte mit **Audio, Bi
 
 Presseportal stärkt Ihre **SEO-Präsenz** in Google, AMP und Social Media und erreicht Redaktionen, Fachblogs, Influencer und interessierte Leserinnen und Leser.`,
 
+  regioAds: `## Überblick
+
+Regio Ads ist ein Add-on zu Ihrer Standard-ots-Verbreitung, das Ihren Content mit garantierten Platzierungen im redaktionellen Umfeld regionaler Medienportale in Deutschland ausspielt — vollständig nachverfolgbar in Analytics.
+
+Während ots Ihre Meldung national verbreitet, ergänzt Regio Ads eine gezielte regionale Ebene: Ihr Content erreicht lokale Zielgruppen in der oder den Regionen Ihrer Wahl — mit einer garantierten Mindestanzahl an Platzierungen und vollständiger Auswertung in Analytics.
+
+Regio Ads ist ausschließlich als Add-on zu einer ots-Verbreitung verfügbar und kann direkt in der App gebucht werden.
+
+## So funktioniert es
+
+\`\`\`steps
+Buchen Sie Ihre ots-Verbreitung wie gewohnt in der App.
+Fügen Sie Regio Ads hinzu und wählen Sie eine oder mehrere Regionen.
+Ihr Content — Text, Bild, Video oder Audio — wird im redaktionellen Umfeld unserer regionalen Medienpartner-Portale platziert.
+Platzierungen sind als Werbung klar gekennzeichnet — für volle Transparenz.
+Nach der Veröffentlichung erscheinen Ihre Platzierungen in Analytics und zeigen genau, wo und wie oft Ihr Content platziert wurde.
+Alle platzierten Inhalte werden langfristig in Suchmaschinen indexiert und archiviert.
+\`\`\`
+
+## Was Sie erhalten
+
+| Feature | Detail |
+|---------|--------|
+| Garantierte Platzierungen | Mindestens 10 verifizierte Platzierungen pro gebuchter Region |
+| Transparentes Reporting | Alle Platzierungen in Ihrem Analytics-Dashboard |
+| Unterstützte Content-Formate | Text, Bild, Video, Audio |
+| Redaktionelles Umfeld | Platzierungen auf etablierten regionalen Nachrichtenportalen |
+| Langfristige Archivierung | Ihr Content wird indexiert und in Suchmaschinen bewahrt |
+| Festpreis | Keine Auktionsmechanik, keine versteckten Kosten, volle Budgetplanbarkeit |
+| Einfache Buchung | Direkt zu jeder ots-Buchung in der App hinzufügbar |
+
+## Regionen & Partner
+
+Deutschland ist in vier Regionen unterteilt. Sie können eine Region, beliebige Kombinationen oder alle vier buchen. Zum Start ist nur Region Süd buchbar — die übrigen Regionen werden schrittweise ergänzt.
+
+\`\`\`regio-regions
+\`\`\`
+
+## Preise
+
+Alle Preise kommen zusätzlich zu Ihrer Standard-ots-Verbreitungsgebühr. Standard-ots-Rabatte gelten (einschließlich Budgetrabatten bis zu 20 %).
+
+### Regio Ads — Einzelbuchung
+
+| Abdeckung | Garantierte Platzierungen | Preis |
+|-----------|---------------------------|-------|
+| 1 Region | Min. 10 pro Region | EUR 590 |
+| 2 Regionen | Min. 10 pro Region | EUR 1.120 (5 % Bundle-Rabatt) |
+| 3 Regionen | Min. 10 pro Region | EUR 1.650 (7 % Bundle-Rabatt) |
+| Alle 4 Regionen | Min. 10 pro Region | EUR 2.120 (10 % Bundle-Rabatt) |
+
+### Regio Ads + Native Ads — Kombinationen
+
+| Paket | Preis |
+|-------|-------|
+| 1 Region + Native Ads Kategorie 1 | EUR 930 |
+| 1 Region + Native Ads Kategorie 2 | EUR 1.120 (5 % Rabatt) |
+| 1 Region + Bundle S | EUR 2.740 (5 % Rabatt) |
+| 1 Region + Bundle M | EUR 3.610 (7 % Rabatt) |
+| 1 Region + Bundle L | EUR 4.070 (10 % Rabatt) |
+
+## Für wen ist das geeignet?
+
+Regio Ads ist die richtige Wahl, wenn Sie:
+
+- regionale Stories, Events oder Kampagnen mit gezielter lokaler Reichweite veröffentlichen
+- ein Unternehmen mit regionalen Niederlassungen, Vertriebsnetzen oder lokalen Zielgruppen betreiben
+- ein Verband oder eine Organisation mit regionaler Relevanz sind
+- nationale ots-Reichweite mit gezielter regionaler Tiefe in einer einzigen Buchung kombinieren möchten
+
+## Häufig gestellte Fragen
+
+### Kann ich Regio Ads ohne Standard-ots-Verbreitung buchen?
+
+Nein. Regio Ads ist ausschließlich als Add-on zu einer Standard-ots-Pressemitteilungsverbreitung verfügbar.
+
+### Wo sehe ich, dass mein Content platziert wurde?
+
+Jede Platzierung ist in Ihrem Analytics-Dashboard dokumentiert. Mindestens 10 Platzierungen pro gebuchter Region sind garantiert und einzeln aufgeführt.
+
+### Welche Content-Formate werden unterstützt?
+
+Text, Bild, Video und Audio können über Regio Ads verbreitet werden.
+
+### Sind die Platzierungen als Werbung gekennzeichnet?
+
+Ja. Entsprechend Presse- und Redaktionsstandards sind alle Platzierungen im redaktionellen Umfeld unserer Partnerportale transparent als Anzeigen gekennzeichnet.
+
+### Ist der Preis fest oder leistungsabhängig?
+
+Der Preis ist vollständig fest. Es gibt keine Auktionen, keine variablen Kosten und kein Budgetrisiko. Sie wissen genau, was Sie zahlen und was Sie erhalten.
+
+### Wann werden die Regionen Nord, Ost und West verfügbar?
+
+Diese Regionen werden nach dem initialen Start in Region Süd schrittweise ausgerollt. Halten Sie Ausschau nach Ankündigungen in der App.`,
+
   crmExport: `## CRM-Export
 
 Exportieren Sie zimpel-Listen für Salesforce, HubSpot oder CSV-Import in Ihr internes System.
@@ -740,6 +836,102 @@ Publish classic press releases as well as content with **audio, images, graphics
 ## Visibility
 
 Presseportal strengthens your **SEO presence** on Google, AMP and social media and reaches newsrooms, trade blogs, influencers and interested readers.`,
+
+  "regio-ads": `## Overview
+
+Regio Ads is an add-on to your standard ots distribution that gives your content guaranteed placement in the editorial environment of regional media portals across Germany.
+
+While ots delivers your release nationally, Regio Ads adds a targeted regional layer — your content reaches local audiences in the region(s) you choose, with a minimum number of placements guaranteed and fully reported in Analytics.
+
+Regio Ads is exclusively available as an add-on to an ots distribution and can be booked directly in the app.
+
+## How it works
+
+\`\`\`steps
+Book your ots distribution as usual in the app.
+Add Regio Ads and select one or more regions.
+Your content — text, image, video, or audio — is placed within the editorial environment of our regional media partner portals.
+Placements are clearly labelled as advertisements for full transparency.
+After publication, your placements appear in Analytics, showing exactly where and how often your content was placed.
+All placed content is indexed and archived long-term in search engines.
+\`\`\`
+
+## What you get
+
+| Feature | Detail |
+|---------|--------|
+| Guaranteed placements | Minimum 10 verified placements per booked region |
+| Transparent reporting | All placements listed in your Analytics dashboard |
+| Supported content formats | Text, image, video, audio |
+| Editorial environment | Placements within established regional news portals |
+| Long-term archiving | Your content is indexed and preserved in search engines |
+| Fixed price | No auction mechanics, no hidden costs, full budget predictability |
+| Simple booking | Add directly to any ots booking in the app |
+
+## Regions & partners
+
+Germany is divided into four regions. You can book one region, any combination, or all four. At launch, only Region South is bookable — the remaining regions will be added in stages.
+
+\`\`\`regio-regions
+\`\`\`
+
+## Pricing
+
+All prices are in addition to your standard ots distribution fee. Standard ots discounts apply (including budget discounts, up to 20%).
+
+### Regio Ads — standalone
+
+| Coverage | Guaranteed placements | Price |
+|----------|----------------------|-------|
+| 1 region | Min. 10 per region | EUR 590 |
+| 2 regions | Min. 10 per region | EUR 1,120 (5% bundle discount) |
+| 3 regions | Min. 10 per region | EUR 1,650 (7% bundle discount) |
+| All 4 regions | Min. 10 per region | EUR 2,120 (10% bundle discount) |
+
+### Regio Ads + Native Ads — combinations
+
+| Package | Price |
+|---------|-------|
+| 1 Region + Native Ads Category 1 | EUR 930 |
+| 1 Region + Native Ads Category 2 | EUR 1,120 (5% discount) |
+| 1 Region + Bundle S | EUR 2,740 (5% discount) |
+| 1 Region + Bundle M | EUR 3,610 (7% discount) |
+| 1 Region + Bundle L | EUR 4,070 (10% discount) |
+
+## Who is this for?
+
+Regio Ads is the right choice if you:
+
+- Have regional stories, events, or campaigns that need targeted local coverage
+- Run a business with regional branches, distribution networks, or local audiences
+- Are an association or organisation with regional relevance
+- Want to combine national ots reach with targeted regional depth in a single booking
+
+## Frequently asked questions
+
+### Can I book Regio Ads without a standard ots distribution?
+
+No. Regio Ads is exclusively available as an add-on to a standard ots press release distribution.
+
+### How do I know my content was placed?
+
+Every placement is documented in your Analytics dashboard. At least 10 placements per booked region are guaranteed and individually listed.
+
+### What content formats are supported?
+
+Text, image, video, and audio content can all be distributed via Regio Ads.
+
+### Are the placements labelled as advertising?
+
+Yes. In line with press and editorial standards, all placements are transparently marked as advertisements within the editorial environment of our partner portals.
+
+### Is the price fixed or does it depend on performance?
+
+The price is fully fixed. There are no auctions, no variable costs, and no budget risk. You know exactly what you pay and what you receive.
+
+### When will the North, East, and West regions be available?
+
+These regions are being rolled out in stages following the initial South launch. Stay tuned for announcements in the app.`,
 }
 
 export const articles: Article[] = [
@@ -764,6 +956,28 @@ export const articles: Article[] = [
     tags: ["OTS", "Presseportal", "ots-international", "channels", "add-ons"],
     locale: "en",
     body: enBodies["distribution-channels-explained"],
+  },
+  {
+    productSlug: "distributions",
+    categorySlug: "channels",
+    slug: "regio-ads",
+    title: "Regio Ads",
+    lead: "Target your press release to specific regions of Germany with guaranteed placements in established local media portals — trackable in Analytics.",
+    updatedAt: "2026-06-08",
+    tags: ["Regio Ads", "OTS", "add-on", "regional", "Analytics"],
+    locale: "de",
+    body: deBodies.regioAds,
+  },
+  {
+    productSlug: "distributions",
+    categorySlug: "channels",
+    slug: "regio-ads",
+    title: "Regio Ads",
+    lead: "Target your press release to specific regions of Germany with guaranteed placements in established local media portals — trackable in Analytics.",
+    updatedAt: "2026-06-08",
+    tags: ["Regio Ads", "OTS", "add-on", "regional", "Analytics"],
+    locale: "en",
+    body: enBodies["regio-ads"],
   },
   {
     productSlug: "distributions",
@@ -995,6 +1209,7 @@ export const articles: Article[] = [
 ]
 
 export const popularSearchChips = [
+  "Regio Ads",
   "Distribution channels explained",
   "Presseportal overview",
   "Native Advertising overview",

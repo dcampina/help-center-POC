@@ -7,8 +7,10 @@ import remarkGfm from "remark-gfm"
 import { ArticleCallout } from "@/components/help/article/ArticleCallout"
 import { PresseportalIcon } from "@/components/help/PresseportalIcon"
 import { ArticleCardGrid } from "@/components/help/article/ArticleCardGrid"
+import { ArticleRegioRegions } from "@/components/help/article/ArticleRegioRegions"
 import { ArticleStatusCell } from "@/components/help/article/ArticleStatusCell"
 import { ArticleSteps } from "@/components/help/article/ArticleSteps"
+import type { Locale } from "@/content/help"
 import {
   parseCallout,
   parseCardGrid,
@@ -21,6 +23,7 @@ import { cn } from "@/lib/utils"
 type MarkdownProps = {
   content: string
   className?: string
+  locale?: Locale
 }
 
 const slugCounts = new Map<string, number>()
@@ -40,9 +43,10 @@ const CUSTOM_BLOCKS = new Set([
   "callout-rose",
   "callout-blue",
   "steps",
+  "regio-regions",
 ])
 
-function renderCustomBlock(lang: string, source: string) {
+function renderCustomBlock(lang: string, source: string, locale: Locale) {
   switch (lang) {
     case "cards":
       return <ArticleCardGrid cards={parseCardGrid(source)} />
@@ -59,6 +63,8 @@ function renderCustomBlock(lang: string, source: string) {
     }
     case "steps":
       return <ArticleSteps steps={parseSteps(source)} />
+    case "regio-regions":
+      return <ArticleRegioRegions locale={locale} />
     default:
       return null
   }
@@ -73,7 +79,7 @@ function cellText(children: React.ReactNode): string {
   return ""
 }
 
-export function Markdown({ content, className }: MarkdownProps) {
+export function Markdown({ content, className, locale = "en" }: MarkdownProps) {
   slugCounts.clear()
 
   return (
@@ -152,7 +158,7 @@ export function Markdown({ content, className }: MarkdownProps) {
             const lang = match?.[1]
             if (lang && CUSTOM_BLOCKS.has(lang)) {
               const source = String(child.props.children).replace(/\n$/, "")
-              return renderCustomBlock(lang, source)
+              return renderCustomBlock(lang, source, locale)
             }
             return (
               <pre className="my-4 overflow-x-auto rounded-lg bg-muted px-4 py-3 text-[13px]">
