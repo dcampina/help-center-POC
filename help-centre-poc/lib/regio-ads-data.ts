@@ -40,7 +40,8 @@ const content: Record<Locale, RegioRegionsContent> = {
       {
         id: "south",
         name: "South",
-        coverage: "Baden-Württemberg, Bavaria, parts of Hesse",
+        coverage:
+          "Bavaria, Baden-Württemberg",
         status: "available",
         partners: [
           {
@@ -118,7 +119,8 @@ const content: Record<Locale, RegioRegionsContent> = {
       {
         id: "north",
         name: "North",
-        coverage: "Northern Germany",
+        coverage:
+          "Hamburg, Schleswig-Holstein, Bremen, Lower Saxony, Mecklenburg-Western Pomerania",
         status: "coming-soon",
         comingSoonNote:
           "Partner and publication details for Region North will be updated when this region launches.",
@@ -126,7 +128,8 @@ const content: Record<Locale, RegioRegionsContent> = {
       {
         id: "east",
         name: "East",
-        coverage: "Eastern Germany",
+        coverage:
+          "Berlin, Brandenburg, Thuringia, Saxony, Saxony-Anhalt",
         status: "coming-soon",
         comingSoonNote:
           "Partner and publication details for Region East will be updated when this region launches.",
@@ -134,7 +137,8 @@ const content: Record<Locale, RegioRegionsContent> = {
       {
         id: "west",
         name: "West",
-        coverage: "Western Germany",
+        coverage:
+          "Hesse, North Rhine-Westphalia, Saarland, Rhineland-Palatinate",
         status: "coming-soon",
         comingSoonNote:
           "Partner and publication details for Region West will be updated when this region launches.",
@@ -149,7 +153,7 @@ const content: Record<Locale, RegioRegionsContent> = {
       {
         id: "south",
         name: "Süd",
-        coverage: "Baden-Württemberg, Bayern, Teile Hessens",
+        coverage: "Bayern, Baden-Württemberg",
         status: "available",
         partners: [
           {
@@ -227,7 +231,8 @@ const content: Record<Locale, RegioRegionsContent> = {
       {
         id: "north",
         name: "Nord",
-        coverage: "Norddeutschland",
+        coverage:
+          "Hamburg, Schleswig-Holstein, Bremen, Niedersachsen, Mecklenburg-Vorpommern",
         status: "coming-soon",
         comingSoonNote:
           "Informationen zu Partnern und Publikationen für Region Nord werden mit dem Regionsstart aktualisiert.",
@@ -235,7 +240,8 @@ const content: Record<Locale, RegioRegionsContent> = {
       {
         id: "east",
         name: "Ost",
-        coverage: "Ostdeutschland",
+        coverage:
+          "Berlin, Brandenburg, Thüringen, Sachsen, Sachsen-Anhalt",
         status: "coming-soon",
         comingSoonNote:
           "Informationen zu Partnern und Publikationen für Region Ost werden mit dem Regionsstart aktualisiert.",
@@ -243,7 +249,8 @@ const content: Record<Locale, RegioRegionsContent> = {
       {
         id: "west",
         name: "West",
-        coverage: "Westdeutschland",
+        coverage:
+          "Hessen, Nordrhein-Westfalen, Saarland, Rheinland-Pfalz",
         status: "coming-soon",
         comingSoonNote:
           "Informationen zu Partnern und Publikationen für Region West werden mit dem Regionsstart aktualisiert.",
