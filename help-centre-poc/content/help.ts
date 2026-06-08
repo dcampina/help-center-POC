@@ -514,29 +514,14 @@ Regio Ads ist die richtige Wahl, wenn Sie:
 
 ## Häufig gestellte Fragen
 
-### Kann ich Regio Ads ohne Standard-ots-Verbreitung buchen?
-
-Nein. Regio Ads ist ausschließlich als Add-on zu einer Standard-ots-Pressemitteilungsverbreitung verfügbar.
-
-### Wo sehe ich, dass mein Content platziert wurde?
-
-Jede Platzierung ist in Ihrem Analytics-Dashboard dokumentiert. Mindestens 10 Platzierungen pro gebuchter Region sind garantiert und einzeln aufgeführt.
-
-### Welche Content-Formate werden unterstützt?
-
-Text, Bild, Video und Audio können über Regio Ads verbreitet werden.
-
-### Sind die Platzierungen als Werbung gekennzeichnet?
-
-Ja. Entsprechend Presse- und Redaktionsstandards sind alle Platzierungen im redaktionellen Umfeld unserer Partnerportale transparent als Anzeigen gekennzeichnet.
-
-### Ist der Preis fest oder leistungsabhängig?
-
-Der Preis ist vollständig fest. Es gibt keine Auktionen, keine variablen Kosten und kein Budgetrisiko. Sie wissen genau, was Sie zahlen und was Sie erhalten.
-
-### Wann werden die Regionen Nord, Ost und West verfügbar?
-
-Diese Regionen werden nach dem initialen Start in Region Süd schrittweise ausgerollt. Halten Sie Ausschau nach Ankündigungen in der App.`,
+\`\`\`faq
+Kann ich Regio Ads ohne Standard-ots-Verbreitung buchen?|Nein. Regio Ads ist ausschließlich als Add-on zu einer Standard-ots-Pressemitteilungsverbreitung verfügbar.
+Wo sehe ich, dass mein Content platziert wurde?|Jede Platzierung ist in Ihrem Analytics-Dashboard dokumentiert. Mindestens 10 Platzierungen pro gebuchter Region sind garantiert und einzeln aufgeführt.
+Welche Content-Formate werden unterstützt?|Text, Bild, Video und Audio können über Regio Ads verbreitet werden.
+Sind die Platzierungen als Werbung gekennzeichnet?|Ja. Entsprechend Presse- und Redaktionsstandards sind alle Platzierungen im redaktionellen Umfeld unserer Partnerportale transparent als Anzeigen gekennzeichnet.
+Ist der Preis fest oder leistungsabhängig?|Der Preis ist vollständig fest. Es gibt keine Auktionen, keine variablen Kosten und kein Budgetrisiko. Sie wissen genau, was Sie zahlen und was Sie erhalten.
+Wann werden die Regionen Nord, Ost und West verfügbar?|Diese Regionen werden nach dem initialen Start in Region Süd schrittweise ausgerollt. Halten Sie Ausschau nach Ankündigungen in der App.
+\`\`\``,
 
   crmExport: `## CRM-Export
 
@@ -909,29 +894,14 @@ Regio Ads is the right choice if you:
 
 ## Frequently asked questions
 
-### Can I book Regio Ads without a standard ots distribution?
-
-No. Regio Ads is exclusively available as an add-on to a standard ots press release distribution.
-
-### How do I know my content was placed?
-
-Every placement is documented in your Analytics dashboard. At least 10 placements per booked region are guaranteed and individually listed.
-
-### What content formats are supported?
-
-Text, image, video, and audio content can all be distributed via Regio Ads.
-
-### Are the placements labelled as advertising?
-
-Yes. In line with press and editorial standards, all placements are transparently marked as advertisements within the editorial environment of our partner portals.
-
-### Is the price fixed or does it depend on performance?
-
-The price is fully fixed. There are no auctions, no variable costs, and no budget risk. You know exactly what you pay and what you receive.
-
-### When will the North, East, and West regions be available?
-
-These regions are being rolled out in stages following the initial South launch. Stay tuned for announcements in the app.`,
+\`\`\`faq
+Can I book Regio Ads without a standard ots distribution?|No. Regio Ads is exclusively available as an add-on to a standard ots press release distribution.
+How do I know my content was placed?|Every placement is documented in your Analytics dashboard. At least 10 placements per booked region are guaranteed and individually listed.
+What content formats are supported?|Text, image, video, and audio content can all be distributed via Regio Ads.
+Are the placements labelled as advertising?|Yes. In line with press and editorial standards, all placements are transparently marked as advertisements within the editorial environment of our partner portals.
+Is the price fixed or does it depend on performance?|The price is fully fixed. There are no auctions, no variable costs, and no budget risk. You know exactly what you pay and what you receive.
+When will the North, East, and West regions be available?|These regions are being rolled out in stages following the initial South launch. Stay tuned for announcements in the app.
+\`\`\``,
 }
 
 export const articles: Article[] = [

@@ -14,6 +14,11 @@ export type FeatureCard = {
   description: string
 }
 
+export type FaqItem = {
+  question: string
+  answer: string
+}
+
 export function parseCardGrid(source: string): ArticleCard[] {
   return source
     .trim()
@@ -57,6 +62,18 @@ export function parseFeatureCards(source: string): FeatureCard[] {
     .map((line) => {
       const [title = "", description = ""] = line.split("|").map((s) => s.trim())
       return { title, description }
+    })
+}
+
+export function parseFaq(source: string): FaqItem[] {
+  return source
+    .trim()
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => {
+      const [question = "", answer = ""] = line.split("|").map((s) => s.trim())
+      return { question, answer }
     })
 }
 

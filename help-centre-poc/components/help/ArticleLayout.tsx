@@ -28,7 +28,7 @@ type ArticleLayoutProps = {
 export function ArticleLayout({ article, locale }: ArticleLayoutProps) {
   const product = getProduct(article.productSlug)!
   const category = getCategory(article.productSlug, article.categorySlug)!
-  const tocItems = extractToc(article.body)
+  const tocItems = extractToc(article.body, locale)
   const related = getRelatedArticles(article)
   const readingTimeMin = estimateReadingTimeMinutes(
     article.title,

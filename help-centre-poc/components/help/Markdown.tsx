@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm"
 import { ArticleCallout } from "@/components/help/article/ArticleCallout"
 import { PresseportalIcon } from "@/components/help/PresseportalIcon"
 import { ArticleCardGrid } from "@/components/help/article/ArticleCardGrid"
+import { ArticleFaq } from "@/components/help/article/ArticleFaq"
 import { ArticleFeatureCards } from "@/components/help/article/ArticleFeatureCards"
 import { ArticleRegioRegions } from "@/components/help/article/ArticleRegioRegions"
 import { ArticleStatusCell } from "@/components/help/article/ArticleStatusCell"
@@ -16,6 +17,7 @@ import {
   parseCallout,
   parseCardGrid,
   parseFeatureCards,
+  parseFaq,
   parseStatusCell,
   parseSteps,
 } from "@/lib/article-blocks"
@@ -40,6 +42,7 @@ function nextId(text: string): string {
 const CUSTOM_BLOCKS = new Set([
   "cards",
   "feature-cards",
+  "faq",
   "callout",
   "callout-accent",
   "callout-neutral",
@@ -55,6 +58,8 @@ function renderCustomBlock(lang: string, source: string, locale: Locale) {
       return <ArticleCardGrid cards={parseCardGrid(source)} />
     case "feature-cards":
       return <ArticleFeatureCards cards={parseFeatureCards(source)} />
+    case "faq":
+      return <ArticleFaq items={parseFaq(source)} />
     case "callout":
     case "callout-accent":
     case "callout-rose":
